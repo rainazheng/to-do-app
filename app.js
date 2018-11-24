@@ -22,10 +22,15 @@ function onReady() {
     newLi.textContent = title;
 
     //attach the checkbox to the li
-    newLi.textContent = title;
-
-    //attach the checkbox to the li
     newLi.appendChild(checkbox);
+
+    //create delete button
+    let delButton = document.createElement('button');
+    delButton.textContent = "delete";
+    delButton.className = "mdl-button mdl-js-button mdl-button--accent";
+
+    //attach delete buton to li
+    newLi.appendChild(delButton);
 
     //attach the li to the ul
     toDoList.appendChild(newLi);
@@ -33,9 +38,12 @@ function onReady() {
     //empty input from text field
     newToDoText.value = '';
 
+    delButton.addEventListener('click', () => {
+      toDoList.removeChild(newLi);
+      toDoList.removeChild(delButton);
+    })
   });
 }
-
 
 window.onload = function() {
   onReady();

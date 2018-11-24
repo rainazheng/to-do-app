@@ -1,0 +1,46 @@
+.mdl-layout__header {
+   justify-content: center;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   min-height: 0;
+   height: 3rem;
+ }
+
+h1 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.page-content {
+  margin-top: 50px;
+
+}
+
+.form {
+  min-height: 0;
+}
+
+.list {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.mdl-button--raised {
+  margin-left: 20px;
+}
+
+.mdl-button--accent {
+  position: absolute;
+  right: 0;
+}
+
+ul li {
+  padding: 10px 0px 5px 20px;
+}
+
+input {
+  position: absolute;
+  left: 0;
+  margin-top: 6px;
+}
