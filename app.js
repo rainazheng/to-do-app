@@ -33,7 +33,7 @@ function onReady() {
       const newLi = document.createElement('li');
       const checkbox = document.createElement('input');
       checkbox.type = "checkbox";
-      const delButton = document.createElement('button');
+      let delButton = document.createElement('button');
       delButton.textContent = "delete";
 
       newLi.textContent = toDo.title;
@@ -44,14 +44,10 @@ function onReady() {
 
       //event listener for delButton
       delButton.addEventListener('click', () => {
-        toDos = toDos.filter(deleteToDos);
+        toDos = toDos.filter(item => item.id != toDo.id);
         rendertheUI();
       });
     });
-  }
-
-  function deleteToDos(item) {
-    return item.id !== toDo.id;
   }
 
   //event listener when the user submits addToDoForm
