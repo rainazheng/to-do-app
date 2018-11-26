@@ -23,6 +23,8 @@ function onReady() {
     renderTheUI();
   }
 
+
+
   //renders the UI
   function renderTheUI() {
     const toDoList = document.getElementById('toDoList');
@@ -33,7 +35,7 @@ function onReady() {
       const newLi = document.createElement('li');
       const checkbox = document.createElement('input');
       checkbox.type = "checkbox";
-      const delButton = document.createElement('button');
+      let delButton = document.createElement('button');
       delButton.textContent = "delete";
 
       newLi.textContent = toDo.title;
@@ -41,6 +43,17 @@ function onReady() {
       toDoList.appendChild(newLi);
       newLi.appendChild(checkbox);
       newLi.appendChild(delButton);
+
+      //event listener for delButton
+      delButton.addEventListener('click', () => {
+        function deleteToDos(item) {
+          return item.id !== toDo.id;
+        }
+
+        toDos = toDos.filter(deleteToDos);
+
+        rendertheUI();
+      });
     });
   }
 
@@ -50,16 +63,7 @@ function onReady() {
     createNewToDo();
   });
 
-  //event listener for delButton
-  delButton.addEventListener('click', () => {
-    function deleteToDos(item) {
-      return item.id !== toDo.id;
-    }
 
-    toDos = toDos.filter(deleteToDos);
-
-    rendertheUI();
-  });
 
   //call to render the UI
   renderTheUI();
