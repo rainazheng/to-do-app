@@ -44,8 +44,13 @@ function onReady() {
 
       //event listener for delButton
       delButton.addEventListener('click', () => {
-        toDos = toDos.filter(item => item.id !== toDo.id);
+        deleteToDos();
+        renderTheUI();
       });
+
+      function deleteToDos() {
+        return toDos.filter(item => item.id !== toDo.id);
+      }
     });
   }
 
