@@ -49,7 +49,7 @@ function onReady() {
 
       //event listener for delButton
       delButton.addEventListener('click', () => {
-        deleteToDos(id);
+        toDos = deleteToDos(toDo.id);
         renderTheUI();
       });
     });
