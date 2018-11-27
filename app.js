@@ -23,6 +23,11 @@ function onReady() {
     renderTheUI();
   }
 
+  //deletes a to do item
+  function deleteToDos(id) {
+    return toDos.filter(item => item.id !== id);
+  }
+
   //renders the UI
   function renderTheUI() {
     const toDoList = document.getElementById('toDoList');
@@ -44,13 +49,9 @@ function onReady() {
 
       //event listener for delButton
       delButton.addEventListener('click', () => {
-        deleteToDos();
+        deleteToDos(id);
         renderTheUI();
       });
-
-      function deleteToDos() {
-        return toDos.filter(item => item.id !== toDo.id);
-      }
     });
   }
 
